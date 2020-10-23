@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Employee from './Employee'
+
+const employee = [
+  {
+    name:"David",
+    id:"ABC"
+  } 
+];
+ 
+
 
 function App() {
+  const baseEmployeeObject = {
+    role:"employee",
+    company:"IBM"
+  };
+  const firstEmployee = {...baseEmployeeObject,...employee[0]};
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Employee {...firstEmployee}/>
     </div>
   );
 }
